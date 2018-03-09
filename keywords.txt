@@ -1,0 +1,8 @@
+MusicBox	KEYWORD1
+~MusicBox	KEYWORD1
+setBuzzerPin	KEYWORD2
+getBuzzerPin	KEYWORD2
+setWholeNoteDuration	KEYWORD2
+getWholeNoteDuration	KEYWORD2
+setInternoteDelay	KEYWORD2
+getInternoteDelay	KEYWORD2
