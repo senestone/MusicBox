@@ -12,27 +12,17 @@ void MusicBox::setBuzzerPin(int pin) {
   buzzerPin = pin;
 }
 
-int MusicBox::getBuzzerPin() {
-  return buzzerPin;
-}
-
 void MusicBox::setWholeNoteDuration(int length) {
 	wholeNoteDuration = length;
-}
-
-int MusicBox::getWholeNoteDuration() {
-	return wholeNoteDuration;
 }
 
 void MusicBox::setInternoteDelay(float delay) {
 	internoteDelay = delay;
 }
 
-float MusicBox::getInternoteDelay() {
-	return internoteDelay;
-}
-
 void MusicBox::playNote() {
+  Serial.print("playNote: " + String(currentNote) + "\n");
+
 	if (timer.isExpired()) {
 		// change the state of the playingNote flag
 		playingNote = false;
@@ -44,10 +34,13 @@ void MusicBox::playNote() {
 		timer.start(pauseDuration);
 	} else {
 		// play the tone for one millisecond per pass)
+    digitalWrite(buzzerPin, melody[currentNote]);
 	}
 }
 
 void MusicBox::playPause() {
+  Serial.print("playPause: " + String(currentNote) + "\n");
+
 	// test the timer to see if it has expired
 	if (timer.isExpired() == true) {
 		// change the state of the playingNote flag
@@ -57,18 +50,24 @@ void MusicBox::playPause() {
 		currentNote += 1;
 
 		// calculate the current note duration
-		noteDuration = (int)(wholeNoteDuration / melody[currentNote][1])
+		noteDuration = (int)(wholeNoteDuration / melody[currentNote][1]);
 
 		// restart the timer
 		timer.start(noteDuration);
 	}
 }
 
-void MusicBox::playMelody() {
-	(playingNote == true) ? playNote() : playPause();
-	}
+void MusicBox::playMelody()
+  if (currentNote < melodySize) {
+	   (playingNote == true) ? playNote() : playPause();
+   }
 }
 
-void MusicBox::setMelody(int melody[][2], size_t size) {
-	
+void MusicBox::setMelody(int melodyArray[][2], size_t size) {
+  melody = melodyArray;
+  melodySize = size;
+}
+
+void MusicBox::setCurrentNote(int pos) {
+  currentNote = pos;
 }

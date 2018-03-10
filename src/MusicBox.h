@@ -1,5 +1,5 @@
 
-#pragma #ifndef
+#pragma once
 
 #ifndef MUSICBOX
 #define MUSICBOX
@@ -16,7 +16,7 @@ private:
 	bool playingNote;
 	int wholeNoteDuration;
 	int melodySize;
-	int *melody[2];
+	int (*melody)[2];
 	float internoteDelay;
 	ActionTimer timer;
 
@@ -31,19 +31,15 @@ public:
 	// destructor
 	~MusicBox();
 
+	// main play method
   void playMelody();
 
-  void setMelody(int melody[][2]);
-  void getMelody();
-
+	// setters (mutators) for private attributes
+  void setMelody(int melody[][2], size_t size);
 	void setBuzzerPin(int port);
-	int getBuzzerPin();
-
 	void setWholeNoteDuration(int length);
-	int getWholeNoteDuration();
-
 	void setInternoteDelay(float delay);
-	float getInternoteDelay();
+	void setCurrentNote(int pos);
 };
 
 #endif /* end of include guard: */

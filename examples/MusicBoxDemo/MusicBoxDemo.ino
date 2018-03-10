@@ -16,8 +16,16 @@ void setup() {
 
 	// set the delay between the notes
 	player.setInternoteDelay(1.3);
+
+  Serial.print("Size of melody: " + String(sizeof(melody) / sizeof(melody[0])));
+  // set the melody to be played
+  player.setMelody(melody, sizeof(melody) / sizeof(melody[0]));
+
+  // set the starting position
+  player.setCurrentNote(0);
 }
 
 void loop() {
   // do main logic here
+  player.playMelody();
 }

@@ -16,7 +16,7 @@
 // The melody array contains the tone, duration, and inter-note
 // pause duration (the last item is calculated based on the
 //internote_pause value. A zero in the tone position indicates a rest.
-int melody[][2] = {
+int melody1[][2] = {
   { NOTE_E6,  12}, { NOTE_E6,  12}, { SILENCE,  12},
   { NOTE_E6,  12}, { SILENCE,  12}, { NOTE_C6,  12},
   { NOTE_E6,  12}, { SILENCE,  12}, { NOTE_G6,  12},
@@ -44,4 +44,26 @@ int melody[][2] = {
   { SILENCE,  12}, { NOTE_C6,  12}, { NOTE_D6,  12},
   { NOTE_B5,  12}, { SILENCE,  12}, { SILENCE,  12},
 };
+
+int melody2[][2] = {
+  { NOTE_C4, 12 }, { NOTE_C5, 12 }, {NOTE_A3, 12 }, { NOTE_A4, 12 },
+  { NOTE_AS3, 12 }, { NOTE_AS4, 12 }, { 0, 6 },
+  { 0, 3 },
+  { NOTE_C4, 12 }, { NOTE_C5, 12 }, { NOTE_A3, 12 }, { NOTE_A4, 12},
+  { NOTE_AS3, 12 }, {NOTE_AS4, 12}, {0,6},
+  { 0, 3},
+  { NOTE_F3,12}, {NOTE_F4,12}, {NOTE_D3,12}, {NOTE_D4,12},
+  { NOTE_DS3,12}, {NOTE_DS4,12}, {0, 6},
+  { 0, 3},
+  { NOTE_F3,12}, {NOTE_F4,12}, {NOTE_D3,12}, {NOTE_D4,12},
+  { NOTE_DS3,12}, {NOTE_DS4,12}, {0,6},
+  { 0, 6}, {NOTE_DS4, 18}, {NOTE_CS4, 18}, {NOTE_D4, 18},
+  { NOTE_CS4,6}, {NOTE_DS4,6},
+  { NOTE_DS4,6}, {NOTE_GS3,6},
+  { NOTE_G3,6}, {NOTE_CS4,6},
+  { NOTE_C4,18}, {NOTE_FS4,18}, {NOTE_F4,18}, {NOTE_E3,18}, {NOTE_AS4,18}, {NOTE_A4,18},
+  { NOTE_GS4,10}, {NOTE_DS4,10}, {NOTE_B3,10},
+  { NOTE_AS3,10}, {NOTE_A3,10}, {NOTE_GS3,10},
+  { 0, 3}, { 0, 3}, { 0, 3}
+}
 #endif
