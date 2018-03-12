@@ -1,8 +1,9 @@
 MusicBox	KEYWORD1
 ~MusicBox	KEYWORD1
+playMelody	KEYWORD2
+isMelodyOver	KEYWORD2
 setBuzzerPin	KEYWORD2
-getBuzzerPin	KEYWORD2
-setWholeNoteDuration	KEYWORD2
-getWholeNoteDuration	KEYWORD2
+setCurrentNote	KEYWORD2
 setInternoteDelay	KEYWORD2
-getInternoteDelay	KEYWORD2
+setMelody	KEYWORD2
+setWholeNoteDuration	KEYWORD2
